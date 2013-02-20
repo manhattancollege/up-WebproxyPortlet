@@ -282,6 +282,24 @@
     </dependencies>
 
     <build>
+        <filters>
+            <filter>${filters.file}</filter>
+        </filters>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>configuration.properties</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>configuration.properties</include>
+                </includes>
+            </resource>
+        </resources>        
         <plugins>
             <plugin>
                 <groupId>com.mycila.maven-license-plugin</groupId>
